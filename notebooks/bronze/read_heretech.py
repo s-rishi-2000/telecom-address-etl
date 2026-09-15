@@ -4,7 +4,8 @@
 # base_environment = "databricks_ai_v5"
 # environment_version = "5"
 # ///
-# MAGIC %run ./bronze_pipeline_utils
+# DBTITLE 1,Load bronze utilities
+# MAGIC %run /Users/rushi@vishaldamale4820gmail.onmicrosoft.com/telecom-address-etl/notebooks/bronze/bronze_pipeline_utils
 
 # COMMAND ----------
 
