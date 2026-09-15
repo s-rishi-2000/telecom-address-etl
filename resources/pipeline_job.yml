@@ -1,0 +1,22 @@
+resources:
+  jobs:
+    telecom_etl_pipeline_job:
+      name: "[ETL] Telecom Address Pipeline"
+      
+      notifications:
+        - on_failure:
+            - rushi@vishaldamale4820gmail.onmicrosoft.com
+
+      tasks:
+        - task_key: run_etl_pipeline
+          notebook_task:
+            notebook_path: ../pipeline
+            source: WORKSPACE_FILES
+          
+          # Executes using Databricks Serverless Compute
+          compute_key: serverless_compute
+
+      environments:
+        - environment_key: serverless_compute
+          spec:
+            client: 2
